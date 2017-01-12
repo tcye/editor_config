@@ -1,4 +1,9 @@
+let mapleader=","
+let g:mapleader = ","
 
+nmap <leader>w :w!<cr>
+
+nnoremap \ ,
 set clipboard=unnamed
 
 set hlsearch
@@ -20,4 +25,3 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz/,/:
-
