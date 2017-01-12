@@ -25,3 +25,8 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz/,/:
+
+nnoremap <leader>f <C-f>
+nnoremap <leader>b <C-b>
+nnoremap <leader>d <C-d>
+nnoremap <leader>u <C-u>
