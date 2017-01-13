@@ -1,9 +1,13 @@
 let mapleader=","
 let g:mapleader = ","
 
-nmap <leader>w :w!<cr>
-
+nnoremap <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
 nnoremap \ ,
+
+map <leader>sa ggVG
+nnoremap U <C-r>
+
 set clipboard=unnamed
 
 set hlsearch
