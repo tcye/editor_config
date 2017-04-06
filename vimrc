@@ -63,8 +63,11 @@ set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 " Key map settings ---------------------- {{{
 let mapleader=" "
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>ee :vsplit $MYVIMRC<cr>
+nnoremap <leader>ss :source $MYVIMRC<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>wq :wq<cr>
 inoremap jk <esc>
 inoremap <esc> <nop>
 
