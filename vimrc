@@ -91,6 +91,8 @@ nnoremap <leader>u <c-u>
 
 nnoremap H ^
 nnoremap L $
+vnoremap H ^
+vnoremap L $
 nnoremap U <c-r>
 nnoremap Y y$
 
