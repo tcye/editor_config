@@ -2,6 +2,8 @@
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'embear/vim-localvimrc'
+" Plug 'davidhalter/jedi-vim'
+Plug 'Shougo/neocomplcache.vim'
 call plug#end()
 " }}}
 
@@ -82,7 +84,7 @@ inoremap <c-l> <right>
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-l>l
+nnoremap <c-l> <c-w>l
 
 nnoremap <leader>f <c-f>
 nnoremap <leader>b <c-b>
@@ -123,3 +125,11 @@ let g:localvimrc_sourced_once_for_file=1
 let g:localvimrc_name=".config/vimrc"
 " }}}
 
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal completeopt-=preview
+let g:acp_enableAtStartup=0
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_min_syntax_length=3
+let g:neocomplcache_lock_buffer_name_pattern='\*ku\*'
+let g:neocomplcache_enable_auto_select=1
