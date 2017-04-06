@@ -30,6 +30,8 @@ syntax on
 filetype plugin indent on
 
 set nocompatible
+set novisualbell
+set noerrorbells
 
 set scrolloff=5
 set scrolljump=5
@@ -66,8 +68,9 @@ let mapleader=" "
 nnoremap <leader>ee :vsplit $MYVIMRC<cr>
 nnoremap <leader>ss :source $MYVIMRC<cr>
 nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>wq :wq<cr>
+nnoremap <leader>q :bd<cr>
+nnoremap <leader>wq :w<cr>:bd<cr>
+
 inoremap jk <esc>
 inoremap <esc> <nop>
 
