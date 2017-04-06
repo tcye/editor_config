@@ -40,6 +40,7 @@ set ruler
 set rulerformat=%35(%=%r%Y\|%{&ff}\|%{strlen(&fenc)?&fenc:'none'}\ %m\ %l/%L%)
 set whichwrap=b,s,<,>,[,]
 
+set fileformat=unix
 set splitright splitbelow
 set backspace=indent,eol,start
 set smarttab expandtab
