@@ -133,3 +133,5 @@ let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_min_syntax_length=3
 let g:neocomplcache_lock_buffer_name_pattern='\*ku\*'
 let g:neocomplcache_enable_auto_select=1
+
+autocmd InsertEnter,InsertLeave * set cul!
