@@ -1,54 +1,48 @@
-let mapleader=","
-let g:mapleader = ","
-nnoremap \ ,
-
-nnoremap <leader>q :q<CR>
-nnoremap <leader>w :w<CR>
-map <leader>sa ggVG
-nnoremap U <C-r>
-
 set clipboard=unnamed
-
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 set number
 set scrolloff=7
-set history=500
+set history=100
 set backspace=indent,eol,start
+
+let mapleader=" "
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>wq :wq<cr>
+
+inoremap jk <esc>
+inoremap <c-h> <left>
+inoremap <c-j> <down>
+inoremap <c-k> <up>
+inoremap <c-l> <right>
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+nnoremap <leader>f <c-f>
+nnoremap <leader>b <c-b>
+nnoremap <leader>d <c-d>
+nnoremap <leader>u <c-u>
+
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+nnoremap U <c-r>
+nnoremap Y y$
 
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
-nnoremap <silent> g* g*zz
-nnoremap <silent> g# g#zz/,/:
-
-nnoremap <leader>f <C-f>
-nnoremap <leader>b <C-b>
-nnoremap <leader>d <C-d>
-nnoremap <leader>u <C-u>
-
-nnoremap H ^
-nnoremap L g_
-
-noremap <C-h> <left>
-noremap <C-j> <down>
-noremap <C-k> <up>
-noremap <C-l> <right>
-inoremap <C-h> <left>
-inoremap <C-j> <down>
-inoremap <C-k> <up>
-inoremap <C-l> <right>
-cnoremap <c-h> <left>
-cnoremap <c-j> <down>
-cnoremap <c-k> <up>
-cnoremap <c-l> <right>
-
-imap <C-BS> <C-w>
 
 vnoremap < <gv
 vnoremap > >gv
 
-map Y y$
+map <leader>sa ggVG
+nnoremap <leader><leader> :action emacsIDEAs.AceJumpWord<cr>
