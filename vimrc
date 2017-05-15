@@ -2,8 +2,9 @@
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'embear/vim-localvimrc'
-" Plug 'davidhalter/jedi-vim'
-Plug 'Shougo/neocomplcache.vim'
+" Plug 'Shougo/neocomplcache.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 " }}}
 
@@ -125,6 +126,7 @@ let g:localvimrc_sourced_once_for_file=1
 let g:localvimrc_name=".config/vimrc"
 " }}}
 
+" Neocomplcache -----------------------{{{
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType python setlocal completeopt-=preview
 let g:acp_enableAtStartup=0
@@ -133,5 +135,14 @@ let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_min_syntax_length=3
 let g:neocomplcache_lock_buffer_name_pattern='\*ku\*'
 let g:neocomplcache_enable_auto_select=1
-
 autocmd InsertEnter,InsertLeave * set cul!
+" }}}
+
+" NerdTree setttings -------------------{{{
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowBookmarks=1  
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" }}}
