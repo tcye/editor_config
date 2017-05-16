@@ -39,7 +39,7 @@ set scrolloff=5
 set scrolljump=5
 set sidescroll=3
 set sidescrolloff=3
-set nowrap
+set wrap
 set ruler
 set rulerformat=%35(%=%r%Y\|%{&ff}\|%{strlen(&fenc)?&fenc:'none'}\ %m\ %l/%L%)
 set whichwrap=b,s,<,>,[,]
