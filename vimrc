@@ -2,9 +2,8 @@
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'embear/vim-localvimrc'
-" Plug 'Shougo/neocomplcache.vim'
+Plug 'Shougo/neocomplcache.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'Valloric/YouCompleteMe'
 call plug#end()
 " }}}
 
