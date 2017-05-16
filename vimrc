@@ -16,13 +16,14 @@ augroup END
 
 " GUI settings --------------------------- {{{
 if has('gui_running')
-    autocmd GUIEnter * simalt ~x
+    " autocmd GUIEnter * simalt ~x
     set guifont=Consolas:h11:cANSI:qDRAFT
     set guioptions-=m
     set guioptions-=T
     set guioptions-=L
     set guioptions-=r
     set guioptions-=b
+	set lines=35 columns=118
 endif
 " }}}
 
@@ -72,6 +73,8 @@ nnoremap <leader>ss :source $MYVIMRC<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :bd<cr>
 nnoremap <leader>wq :w<cr>:bd<cr>
+nnoremap j gj
+nnoremap k gk
 
 inoremap jk <esc>
 inoremap <esc> <nop>
