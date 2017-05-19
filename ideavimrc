@@ -45,4 +45,5 @@ vnoremap < <gv
 vnoremap > >gv
 
 map <leader>sa ggVG
-nnoremap <leader><leader> :action emacsIDEAs.AceJumpWord<cr>
+" nnoremap <leader><leader> :action emacsIDEAs.AceJumpWord<cr>
+nnoremap , :action emacsIDEAs.AceJumpWord<cr>
