@@ -1,0 +1,47 @@
+set clipboard=unnamed
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set number
+set scrolloff=7
+set history=100
+set backspace=indent,eol,start
+
+let mapleader=" "
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>wq :wq<cr>
+
+inoremap jk <esc>
+inoremap <c-h> <left>
+inoremap <c-j> <down>
+inoremap <c-k> <up>
+inoremap <c-l> <right>
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+nnoremap <leader>f <c-f>
+nnoremap <leader>b <c-b>
+nnoremap <leader>d <c-d>
+nnoremap <leader>u <c-u>
+
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+nnoremap U <c-r>
+nnoremap Y y$
+
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+
+vnoremap < <gv
+vnoremap > >gv
+
+map <leader>sa ggVG
