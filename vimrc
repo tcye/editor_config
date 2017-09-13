@@ -28,7 +28,7 @@ endif
 " }}}
 
 " Common settings ----------------------- {{{
-colorscheme desert
+colorscheme SolarizedDark
 syntax on
 filetype plugin indent on
 
