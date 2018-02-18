@@ -61,7 +61,7 @@ set numberwidth=4
 set number
 set showcmd
 set shiftround
-set clipboard=unnamed
+set clipboard=unnamed,unnamedplus
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 set cc=80
