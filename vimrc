@@ -4,6 +4,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'embear/vim-localvimrc'
 Plug 'Shougo/neocomplcache.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 " }}}
 
@@ -23,7 +24,7 @@ if has('gui_running')
     set guioptions-=L
     set guioptions-=r
     set guioptions-=b
-	set lines=35 columns=118
+    set lines=35 columns=118
 endif
 " }}}
 
@@ -69,7 +70,7 @@ set cc=80
 " }}}
 
 " Key map settings ---------------------- {{{
-let mapleader=" "
+let mapleader=","
 nnoremap <leader>ee :vsplit $MYVIMRC<cr>
 nnoremap <leader>ss :source $MYVIMRC<cr>
 nnoremap <leader>w :w<cr>
