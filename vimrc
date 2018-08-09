@@ -5,6 +5,9 @@ Plug 'embear/vim-localvimrc'
 Plug 'Shougo/neocomplcache.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'Yggdroot/indentLine'
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 " }}}
 
