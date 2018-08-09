@@ -36,6 +36,9 @@ colorscheme evening
 syntax on
 filetype plugin indent on
 
+set laststatus=2
+set t_Co=256
+
 set nocompatible
 set novisualbell
 set noerrorbells
@@ -155,4 +158,9 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" }}}
+
+" AirLine -------------------{{{
+let g:airline#extensions#tabline#enabled=1
+nmap <tab> :bn<cr>
 " }}}
