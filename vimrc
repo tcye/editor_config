@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 " }}}
 
