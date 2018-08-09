@@ -1,7 +1,6 @@
 " Vim Plug ------------------------------- {{{
 call plug#begin('~/.vim/plugged')
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'embear/vim-localvimrc'
+Plug 'Yggdroot/LeaderF'
 Plug 'Shougo/neocomplcache.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -9,6 +8,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'dyng/ctrlsf.vim'
 call plug#end()
 " }}}
 
@@ -99,11 +99,6 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
-nnoremap <leader>f <c-f>
-nnoremap <leader>b <c-b>
-nnoremap <leader>d <c-d>
-nnoremap <leader>u <c-u>
-
 nnoremap H ^
 nnoremap L $
 vnoremap H ^
@@ -124,18 +119,6 @@ inoremap <c-bs> <c-w>
 
 vnoremap < <gv
 vnoremap > >gv
-" }}}
-
-" CtrlP settings ------------------------ {{{
-let g:ctrlp_by_filename=1
-let g:ctrlp_clear_cache_on_exit=0
-let g:ctrlp_root_markers = ['.config']
-" }}}
-
-" Localvimrc setttings -------------------{{{
-let g:localvimrc_sourced_once=1
-let g:localvimrc_sourced_once_for_file=1
-let g:localvimrc_name=".config/vimrc"
 " }}}
 
 " Neocomplcache -----------------------{{{
