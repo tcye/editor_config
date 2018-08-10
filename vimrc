@@ -1,10 +1,11 @@
 " Vim Plug ------------------------------- {{{
 call plug#begin('~/.vim/plugged')
+Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator',{'branch':'stable'}
 Plug 'Yggdroot/LeaderF'
-Plug 'Shougo/neocomplcache.vim'
+Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'editorconfig/editorconfig-vim'
@@ -121,18 +122,6 @@ vnoremap < <gv
 vnoremap > >gv
 " }}}
 
-" Neocomplcache -----------------------{{{
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType python setlocal completeopt-=preview
-let g:acp_enableAtStartup=0
-let g:neocomplcache_enable_at_startup=1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_min_syntax_length=3
-let g:neocomplcache_lock_buffer_name_pattern='\*ku\*'
-let g:neocomplcache_enable_auto_select=1
-autocmd InsertEnter,InsertLeave * set cul!
-" }}}
-
 " NerdTree setttings -------------------{{{
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1  
@@ -147,4 +136,37 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " AirLine -------------------{{{
 let g:airline#extensions#tabline#enabled=1
 nmap <tab> :bn<cr>
+" }}}
+
+" YCM Settings ----------------{{{
+let g:ycm_python_binary_path='python3'
+let g:ycm_semantic_triggers={
+            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+            \ 'cs,lua,javascript': ['re!\w{2}'],
+            \ }
+"highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
+"highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
+set completeopt=menu,menuone
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_show_diagnostics_ui=0
+let g:ycm_confirm_extra_conf=0
+let g:ycm_collect_identifiers_from_tags_files=1
+let g:ycm_collect_identifiers_from_comments_and_strings=1
+let g:ycm_min_num_of_chars_for_completion=2
+let g:ycm_cache_omnifunc=0
+let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_complete_in_strings=1
+let g:ycm_filetype_whitelist={ 
+            \ "c":1,
+            \ "cpp":1, 
+            \ "python":1,
+            \ "sh":1,
+            \ "zsh":1,
+            \ "zimbu":1,
+            \ }
+let g:ycm_filetype_blacklist={ 
+            \ 'tagbar':1,
+            \ 'nerdtree':1,
+            \ 'txt':1,
+            \ }
 " }}}
