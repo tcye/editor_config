@@ -1,18 +1,22 @@
 " Vim Plug ------------------------------- {{{
 call plug#begin('~/.vim/plugged')
-Plug 'Valloric/YouCompleteMe'
-Plug 'Yggdroot/LeaderF'
-Plug 'Yggdroot/indentLine'
+Plug 'dracula/vim',{'as':'dracula'}
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'jiangmiao/auto-pairs'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'dyng/ctrlsf.vim'
+Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'moll/vim-bbye'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
+Plug 'Yggdroot/indentLine'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Valloric/YouCompleteMe'
+Plug 'Yggdroot/LeaderF'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'dyng/ctrlsf.vim'
+Plug 'moll/vim-bbye'
+Plug 'justinmk/vim-sneak'
+Plug 'junegunn/vim-easy-align'
+Plug 'w0rp/ale'
 call plug#end()
 " }}}
 
@@ -24,8 +28,9 @@ augroup END
 " }}}
 
 " Common settings ----------------------- {{{
-colorscheme evening
+"colorscheme evening
 syntax on
+color dracula
 filetype plugin indent on
 
 set laststatus=2
@@ -103,7 +108,7 @@ vnoremap > >gv
 " }}}
 
 " NerdTree setttings -------------------{{{
-map <F2> :NERDTreeToggle<CR>
+nmap <F1> :NERDTreeToggle <Bar> if &filetype=='nerdtree' <Bar> wincmd p <Bar> endif <CR>
 let NERDTreeShowBookmarks=1  
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | wincmd p | endif
@@ -124,11 +129,9 @@ let g:ycm_semantic_triggers={
             \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
             \ 'cs,lua,javascript': ['re!\w{2}'],
             \ }
-"highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
-"highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
 set completeopt=menu,menuone
 let g:ycm_add_preview_to_completeopt=0
-let g:ycm_show_diagnostics_ui=0
+let g:ycm_show_diagnostics_ui=1
 let g:ycm_confirm_extra_conf=0
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_collect_identifiers_from_comments_and_strings=1
@@ -153,4 +156,22 @@ let g:ycm_filetype_blacklist={
 
 " LeaderF -------------------{{{
 let g:Lf_StlSeparator = { 'left': '', 'right': '' }
+" }}}
+
+" CtrlSF -------------------{{{
+let g:ctrlsf_position='right'
+let g:ctrlsf_winsize='35%'
+let g:ctrlsf_auto_focus={"at":"start"}
+nmap <leader>sf <Plug>CtrlSFPrompt
+vmap <leader>sf <Plug>CtrlSFVwordPath
+nmap <F2> :CtrlSFToggle<CR>
+" }}}
+
+" EasyAlign -------------------{{{
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+" }}}
+
+" ale -------------------{{{
+let g:ale_completion_enabled=0
 " }}}
