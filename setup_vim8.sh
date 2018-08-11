@@ -1,10 +1,14 @@
 # install ncurses
+cd ~/repo
 wget ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz
 tar -xzf ncurses-6.1.tar.gz
 cd ncurses-6.1
 ./configure --prefix=/home/yetiancai/.local/
 make
 make install
+
+cd ..
+rm ncurses-6.1* -rf
 
 # install vim8
 git clone https://github.com/vim/vim.git

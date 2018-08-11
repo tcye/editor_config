@@ -1,15 +1,18 @@
 " Vim Plug ------------------------------- {{{
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator',{'branch':'stable'}
 Plug 'Yggdroot/LeaderF'
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dyng/ctrlsf.vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'moll/vim-bbye'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 " }}}
 
@@ -18,19 +21,6 @@ augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
-" }}}
-
-" GUI settings --------------------------- {{{
-if has('gui_running')
-    " autocmd GUIEnter * simalt ~x
-    set guifont=Consolas:h11:cANSI:qDRAFT
-    set guioptions-=m
-    set guioptions-=T
-    set guioptions-=L
-    set guioptions-=r
-    set guioptions-=b
-    set lines=35 columns=118
-endif
 " }}}
 
 " Common settings ----------------------- {{{
@@ -50,8 +40,6 @@ set scrolljump=5
 set sidescroll=3
 set sidescrolloff=3
 set wrap
-set ruler
-set rulerformat=%35(%=%r%Y\|%{&ff}\|%{strlen(&fenc)?&fenc:'none'}\ %m\ %l/%L%)
 set whichwrap=b,s,<,>,[,]
 
 set fileformat=unix
@@ -71,8 +59,8 @@ set number
 set showcmd
 set shiftround
 set clipboard=unnamed,unnamedplus
+set encoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
-
 set cc=80
 
 " }}}
@@ -82,14 +70,12 @@ let mapleader=","
 nnoremap <leader>ee :vsplit $MYVIMRC<cr>
 nnoremap <leader>ss :source $MYVIMRC<cr>
 nnoremap <leader>w :w<cr>
-nnoremap <leader>q :bd<cr>
-nnoremap <leader>wq :w<cr>:bd<cr>
+nnoremap <leader>q :Bdelete<cr>
+nnoremap <leader>wq :w<cr>:Bdelete<cr>
 nnoremap j gj
 nnoremap k gk
 
 inoremap jk <esc>
-inoremap <esc> <nop>
-
 inoremap <c-h> <left>
 inoremap <c-j> <down>
 inoremap <c-k> <up>
@@ -112,28 +98,22 @@ nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 
-nnoremap <a-down> :bn!<cr>
-nnoremap <a-up> :bp!<cr>
-inoremap <a-down> <esc>:bn!<cr>
-inoremap <a-up> <esc>:bp!<cr>
-inoremap <c-bs> <c-w>
-
 vnoremap < <gv
 vnoremap > >gv
 " }}}
 
 " NerdTree setttings -------------------{{{
-map <C-n> :NERDTreeToggle<CR>
+map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1  
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | wincmd p | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " }}}
 
 " AirLine -------------------{{{
+let g:airline_theme='simple'
+let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 nmap <tab> :bn<cr>
 " }}}
