@@ -150,3 +150,7 @@ let g:ycm_filetype_blacklist={
             \ 'txt':1,
             \ }
 " }}}
+
+" LeaderF -------------------{{{
+let g:Lf_StlSeparator = { 'left': '', 'right': '' }
+" }}}
