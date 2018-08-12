@@ -29,4 +29,5 @@ make
 make install
 
 echo source ~/repo/editor_config/vimrc >> ~/.vimrc
-
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
