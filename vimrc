@@ -174,4 +174,16 @@ nmap ga <Plug>(EasyAlign)
 
 " ale -------------------{{{
 let g:ale_completion_enabled=0
+let g:ale_linters_explicit=1
+let g:ale_sign_column_always=1
+let g:airline#extensions#ale#enabled=1
+let g:ale_echo_msg_error_str='E'
+let g:ale_echo_msg_warning_str='W'
+let g:ale_echo_msg_format='[%linter%] %s [%severity%]'
+let g:ale_linters={
+            \ 'python': ['pylint'],
+            \ }
+nmap <silent> <c-k> <Plug>(ale_previous_wrap)
+nmap <silent> <c-j> <Plug>(ale_next_wrap)
+
 " }}}
