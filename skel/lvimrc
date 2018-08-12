@@ -1,0 +1,5 @@
+let g:ale_python_pylint_options=
+            \"--init-hook='import sys;
+            \sys.path.append(\"extra_path\")'
+            \"
+let g:ale_c_build_dir='build dir contains compile_commands.json'

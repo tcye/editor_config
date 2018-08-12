@@ -17,6 +17,7 @@ Plug 'moll/vim-bbye'
 Plug 'justinmk/vim-sneak'
 Plug 'junegunn/vim-easy-align'
 Plug 'w0rp/ale'
+Plug 'embear/vim-localvimrc'
 call plug#end()
 " }}}
 
@@ -152,6 +153,7 @@ let g:ycm_filetype_blacklist={
             \ 'nerdtree':1,
             \ 'txt':1,
             \ }
+nmap <leader>jd :YcmCompleter GoTo<CR>
 " }}}
 
 " LeaderF -------------------{{{
@@ -182,6 +184,7 @@ let g:ale_echo_msg_warning_str='W'
 let g:ale_echo_msg_format='[%linter%] %s [%severity%]'
 let g:ale_linters={
             \ 'python': ['pylint'],
+            \ 'cpp': ['clangcheck', 'clangtidy'],
             \ }
 nmap <silent> <c-k> <Plug>(ale_previous_wrap)
 nmap <silent> <c-j> <Plug>(ale_next_wrap)
