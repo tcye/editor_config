@@ -8,7 +8,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
-Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/LeaderF'
 Plug 'editorconfig/editorconfig-vim'
@@ -20,6 +19,8 @@ Plug 'w0rp/ale'
 Plug 'embear/vim-localvimrc'
 Plug '907th/vim-auto-save'
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'tenfyzhong/CompleteParameter.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 " }}}
 
@@ -88,13 +89,13 @@ nnoremap k gk
 
 inoremap jk <esc>
 inoremap <c-h> <left>
-inoremap <c-j> <down>
-inoremap <c-k> <up>
+"inoremap <c-j> <down>
+"inoremap <c-k> <up>
 inoremap <c-l> <right>
 
 nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
+"nnoremap <c-j> <c-w>j
+"nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
 nnoremap H ^
@@ -159,6 +160,13 @@ let g:ycm_filetype_blacklist={
             \ 'txt':1,
             \ }
 nmap <leader>jd :YcmCompleter GoTo<CR>
+inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+let g:AutoPairs = {'[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
+inoremap <buffer><silent> ) <C-R>=AutoPairsInsert(')')<CR>
 " }}}
 
 " LeaderF -------------------{{{
