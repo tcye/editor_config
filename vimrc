@@ -18,6 +18,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'junegunn/vim-easy-align'
 Plug 'w0rp/ale'
 Plug 'embear/vim-localvimrc'
+Plug '907th/vim-auto-save'
 call plug#end()
 " }}}
 
@@ -57,7 +58,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4
 set ignorecase smartcase incsearch hlsearch
 
 set nobackup noswapfile
-set history=200
+set history=100
 set autoread
 
 set numberwidth=4
@@ -133,7 +134,7 @@ let g:ycm_semantic_triggers={
 set completeopt=menu,menuone
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_show_diagnostics_ui=0
-let g:ycm_confirm_extra_conf=0
+"let g:ycm_confirm_extra_conf=0
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_min_num_of_chars_for_completion=2
@@ -189,4 +190,8 @@ let g:ale_linters={
 nmap <silent> <c-k> <Plug>(ale_previous_wrap)
 nmap <silent> <c-j> <Plug>(ale_next_wrap)
 
+" }}}
+
+" vim auto save -------------------{{{
+let g:auto_save=1
 " }}}
