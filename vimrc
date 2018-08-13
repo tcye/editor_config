@@ -69,6 +69,7 @@ set clipboard=unnamed,unnamedplus
 set encoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 set cc=80
+autocmd InsertEnter,InsertLeave * se cul!
 
 " }}}
 
