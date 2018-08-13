@@ -19,6 +19,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'w0rp/ale'
 Plug 'embear/vim-localvimrc'
 Plug '907th/vim-auto-save'
+Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 " }}}
 
@@ -26,6 +27,8 @@ call plug#end()
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
+    autocmd FileType cpp setlocal foldmethod=syntax
+    autocmd FileType python setlocal foldmethod=indent
 augroup END
 " }}}
 
@@ -196,3 +199,4 @@ nmap <silent> <c-j> <Plug>(ale_next_wrap)
 " vim auto save -------------------{{{
 let g:auto_save=1
 " }}}
+
