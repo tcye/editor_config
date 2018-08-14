@@ -31,6 +31,7 @@ augroup filetype_vim
     autocmd FileType cpp setlocal foldmethod=syntax
     autocmd FileType python setlocal foldmethod=indent
 augroup END
+set foldlevelstart=20
 " }}}
 
 " Common settings ----------------------- {{{
@@ -132,19 +133,19 @@ nmap <tab> :bn<cr>
 
 " YCM Settings ----------------{{{
 let g:ycm_python_binary_path='python3'
-let g:ycm_semantic_triggers={
-            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
-            \ 'cs,lua,javascript': ['re!\w{2}'],
-            \ }
+"let g:ycm_semantic_triggers={
+            "\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+            "\ 'cs,lua,javascript': ['re!\w{2}'],
+            "\ }
 set completeopt=menu,menuone
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_show_diagnostics_ui=0
 "let g:ycm_confirm_extra_conf=0
-let g:ycm_collect_identifiers_from_tags_files=1
-let g:ycm_collect_identifiers_from_comments_and_strings=1
-let g:ycm_min_num_of_chars_for_completion=2
-let g:ycm_cache_omnifunc=0
-let g:ycm_seed_identifiers_with_syntax=1
+"let g:ycm_collect_identifiers_from_tags_files=1
+"let g:ycm_collect_identifiers_from_comments_and_strings=1
+"let g:ycm_min_num_of_chars_for_completion=2
+"let g:ycm_cache_omnifunc=0
+"let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_complete_in_strings=1
 let g:ycm_filetype_whitelist={ 
             \ "c":1,
