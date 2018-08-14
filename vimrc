@@ -117,7 +117,8 @@ vnoremap > >gv
 
 " NerdTree setttings -------------------{{{
 nmap <F1> :NERDTreeToggle <Bar> if &filetype=='nerdtree' <Bar> wincmd p <Bar> endif <CR>
-let NERDTreeShowBookmarks=1  
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeChDirMode=2
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | wincmd p | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
@@ -137,7 +138,7 @@ let g:ycm_python_binary_path='python3'
             "\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
             "\ 'cs,lua,javascript': ['re!\w{2}'],
             "\ }
-set completeopt=menu,menuone
+set completeopt-=preview
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_show_diagnostics_ui=0
 "let g:ycm_confirm_extra_conf=0
