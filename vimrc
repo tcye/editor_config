@@ -199,7 +199,7 @@ let g:ale_echo_msg_warning_str='W'
 let g:ale_echo_msg_format='[%linter%] %s [%severity%]'
 let g:ale_linters={
             \ 'python': ['pylint'],
-            \ 'cpp': ['clangcheck', 'clangtidy'],
+            \ 'cpp': ['clangtidy'],
             \ }
 nmap <silent> <c-k> <Plug>(ale_previous_wrap)
 nmap <silent> <c-j> <Plug>(ale_next_wrap)
