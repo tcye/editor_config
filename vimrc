@@ -21,6 +21,7 @@ Plug '907th/vim-auto-save'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'tenfyzhong/CompleteParameter.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'guns/xterm-color-table.vim'
 call plug#end()
 " }}}
 
@@ -203,7 +204,14 @@ let g:ale_linters={
             \ }
 nmap <silent> <c-k> <Plug>(ale_previous_wrap)
 nmap <silent> <c-j> <Plug>(ale_next_wrap)
-
+"highlight clear ALEErrorSign
+"highlight clear ALEWarningSign
+let g:ale_sign_error='✘'
+let g:ale_sign_warning='⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=124
+highlight ALEWarningSign ctermbg=NONE ctermfg=45
+"hi link ALEErrorSign Error
+"hi link ALEWarningSign Warning
 " }}}
 
 " vim auto save -------------------{{{
