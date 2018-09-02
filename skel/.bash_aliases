@@ -1,0 +1,6 @@
+alias sl="ls"
+alias pip="pip3"
+alias python="python3"
+alias pi="pip3"
+alias py="python3"
+alias xopen="xdg-open"
