@@ -30,7 +30,7 @@ if [[ $# -eq 1 && $1 == "--compile" ]]; then
     make install
 fi
 
-echo source ~/repo/editor_config/vimrc >> ~/.vimrc
+ln -s ~/repo/editor_config/vimrc ~/.vimrc
 cp ~/repo/editor_config/fonts ~/.fonts -r
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
