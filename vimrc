@@ -38,6 +38,7 @@ set foldlevelstart=20
 " Common settings ----------------------- {{{
 "colorscheme evening
 syntax on
+let g:dracula_italic=0
 color dracula
 filetype plugin indent on
 
