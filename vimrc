@@ -38,7 +38,7 @@ set foldlevelstart=20
 " Common settings ----------------------- {{{
 "colorscheme evening
 syntax on
-let g:dracula_italic=0
+"let g:dracula_italic=0
 color dracula
 filetype plugin indent on
 
@@ -102,9 +102,9 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 nnoremap H ^
-nnoremap L $
+nnoremap L g_
 vnoremap H ^
-vnoremap L $
+vnoremap L g_
 nnoremap U <c-r>
 nnoremap Y y$
 
