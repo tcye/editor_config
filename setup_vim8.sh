@@ -1,17 +1,5 @@
 if [[ $# -eq 1 && $1 == "--compile" ]]; then
-    # install ncurses
-    cd ~/Repo
-    if [ ! -f "./ncurses-6.1.tar.gz" ]; then
-        wget ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz
-    fi
-    tar -xzf ncurses-6.1.tar.gz
-    cd ncurses-6.1
-    ./configure --prefix=$HOME/.local/
-    make
-    make install
-
-    cd ..
-
+    cd ~/repo
     # install vim8
     if [ ! -d "./vim" ]; then
         git clone https://github.com/vim/vim.git
@@ -39,10 +27,10 @@ if [[ $# -eq 1 && $1 == "--compile" ]]; then
 fi
 
 rm ~/.vimrc
-ln -s ~/Repo/editor_config/vimrc ~/.vimrc
+ln -s ~/repo/editor_config/vimrc ~/.vimrc
 
 rm -rf ~/.fonts
-cp ~/Repo/editor_config/fonts ~/.fonts -r
+cp ~/repo/editor_config/fonts ~/.fonts -r
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
