@@ -8,7 +8,7 @@ set scrolloff=7
 set history=100
 set backspace=indent,eol,start
 
-let mapleader=" "
+let mapleader=","
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>wq :wq<cr>
@@ -30,9 +30,9 @@ nnoremap <leader>d <c-d>
 nnoremap <leader>u <c-u>
 
 nnoremap H ^
-nnoremap L $
+nnoremap L g_
 vnoremap H ^
-vnoremap L $
+vnoremap L g_
 nnoremap U <c-r>
 nnoremap Y y$
 
@@ -45,4 +45,6 @@ vnoremap < <gv
 vnoremap > >gv
 
 map <leader>sa ggVG
-nnoremap f :action emacsIDEAs.AceJumpWord<cr>
+nnoremap s :action emacsIDEAs.AceJumpWord<cr>
+nnoremap <leader>f :action GotoFile<cr>
+nnoremap <leader>sf :action FindInPath<cr>

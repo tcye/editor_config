@@ -13,7 +13,7 @@ Plug 'Yggdroot/LeaderF'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'moll/vim-bbye'
-Plug 'justinmk/vim-sneak'
+"Plug 'justinmk/vim-sneak'
 Plug 'junegunn/vim-easy-align'
 Plug 'w0rp/ale'
 Plug 'embear/vim-localvimrc'
@@ -22,6 +22,7 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'tenfyzhong/CompleteParameter.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'guns/xterm-color-table.vim'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 " }}}
 
@@ -219,3 +220,7 @@ highlight ALEWarningSign ctermbg=NONE ctermfg=45
 let g:auto_save=1
 " }}}
 
+" vim easy emotion ----------------{{{
+"map <Leader> <Plug>(easymotion-prefix)
+nmap s <Plug>(easymotion-bd-f)
+" }}}
