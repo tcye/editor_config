@@ -4,7 +4,7 @@ if [[ $# -eq 1 && $1 == "--compile" ]]; then
     if [ ! -d "./vim" ]; then
         git clone https://github.com/vim/vim.git
         cd vim
-        git checkout v8.1.0420
+        git checkout v8.1.0527
     else
         cd vim
     fi
